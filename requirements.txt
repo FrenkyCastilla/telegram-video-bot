@@ -1,0 +1,7 @@
+aiogram==3.15.0
+python-dotenv==1.0.1
+ffmpeg-python==0.2.0
+openai==1.57.4
+requests==2.32.3
+aiohttp==3.11.11
+aiofiles==24.1.0

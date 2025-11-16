@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  telegram-bot:
+    build: .
+    container_name: telegram-video-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      # Mount temp directory for file processing
+      - ./temp:/app/temp
+      # Mount logs directory (optional)
+      - ./logs:/app/logs
+    environment:
+      - PYTHONUNBUFFERED=1
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
